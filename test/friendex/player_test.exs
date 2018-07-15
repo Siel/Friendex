@@ -1,6 +1,5 @@
 defmodule FriendexTest.Player do
   use ExUnit.Case
-  doctest Friendex
 
   @test_name "Tatiana"
   @test_email "prueba@prueba.com"
