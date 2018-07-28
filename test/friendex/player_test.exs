@@ -1,5 +1,6 @@
 defmodule FriendexTest.Player do
   use ExUnit.Case
+  doctest Friendex.Player
 
   @test_name "Tatiana"
   @test_email "prueba@prueba.com"
@@ -14,7 +15,7 @@ defmodule FriendexTest.Player do
   end
 
   test "Player.new/2/3 returns :error if the email is wrong formatted" do
-    assert {:error, "Invalid email"} = Friendex.Player.new(@test_name, @wrong_email)
-    assert {:error, "Invalid email"} = Friendex.Player.new(@test_name, @wrong_email, :admin)
+    assert {:error, :invalid_email} = Friendex.Player.new(@test_name, @wrong_email)
+    assert {:error, :invalid_email} = Friendex.Player.new(@test_name, @wrong_email, :admin)
   end
 end
